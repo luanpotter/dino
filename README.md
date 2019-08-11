@@ -1,5 +1,7 @@
 # dino
 
+[![Powered by Flame](https://img.shields.io/badge/Powered%20by-%F0%9F%94%A5-orange.svg?style=for-the-badge)](https://flame-engine.org)
+
 Yet another T-Rex clone, this time simplified to showcase flame for beginners.
 
 ## challenges (next steps)
