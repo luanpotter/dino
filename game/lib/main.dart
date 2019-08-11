@@ -3,23 +3,50 @@ import 'package:flame/components/component.dart';
 import 'package:flame/components/resizable.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 Future main() async {
   await Flame.util.setOrientation(DeviceOrientation.landscapeLeft);
   Size size = await Flame.util.initialDimensions();
-  runApp(MyGame(size).widget);
+  MyGame game = MyGame(size);
+  runApp(game.widget);
+  Flame.util.addGestureRecognizer(TapGestureRecognizer()..onTap = () => game.tap());
 }
 
 class Dino extends AnimationComponent {
+  static const G = 300.0;
+
   static const S = 3.0;
   static const W = 15.0;
   static const H = 17.0;
 
+  double initialY;
+  double ySpeed = 0.0;
+
   Dino(Size size) : super.sequenced(S * W, S * H, 'dino.png', 6, textureWidth: W, textureHeight: H) {
     x = size.width / 3;
-    y = size.height / 2 - this.height;
+    y = initialY = size.height / 2 - this.height;
+  }
+
+  @override
+  void update(double t) {
+    if (ySpeed != 0.0) {
+      y += ySpeed * t - G * t  * t / 2;
+      ySpeed += G * t;
+    }
+    if (y >= initialY) {
+      y = initialY;
+      ySpeed = 0.0;
+    }
+    super.update(t);
+  }
+
+  void jump() {
+    if (ySpeed == 0.0) {
+      ySpeed = -250.0;
+    }
   }
 
   @override
@@ -42,9 +69,15 @@ class Bg extends Component with Resizable {
 }
 
 class MyGame extends BaseGame {
+  Dino dino;
+
   MyGame(Size size) {
     this.size = size;
-    add(Dino(size));
+    add(dino = Dino(size));
     add(Bg());
+  }
+
+  void tap() {
+    dino.jump();
   }
 }
