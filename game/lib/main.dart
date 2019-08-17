@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 Future main() async {
   await Flame.util.setOrientation(DeviceOrientation.landscapeLeft);
   Size size = await Flame.util.initialDimensions();
+
   MyGame game = MyGame(size);
   runApp(game.widget);
   Flame.util.addGestureRecognizer(TapGestureRecognizer()..onTap = () => game.tap());
@@ -17,6 +18,7 @@ Future main() async {
 
 class Dino extends AnimationComponent {
   static const G = 300.0;
+  static const J = -250.0;
 
   static const S = 3.0;
   static const W = 15.0;
@@ -45,7 +47,7 @@ class Dino extends AnimationComponent {
 
   void jump() {
     if (ySpeed == 0.0) {
-      ySpeed = -250.0;
+      ySpeed = J;
     }
   }
 
