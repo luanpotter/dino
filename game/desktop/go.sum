@@ -5,6 +5,8 @@ github.com/go-flutter-desktop/go-flutter v0.27.4 h1:PK0aN1Jcb9B08r/kCYZIyEu9LcEj
 github.com/go-flutter-desktop/go-flutter v0.27.4/go.mod h1:GZYxHYp7lRnt3imJV1d8EWleMv5q9J4S2ONNEqpPOfo=
 github.com/go-flutter-desktop/go-flutter v0.27.5-0.20190815150032-19ec300ac7e1 h1:058tx+uI1cIodlCf3rfIJODHXNJ1FcQ6K2tcYT0MECg=
 github.com/go-flutter-desktop/go-flutter v0.27.5-0.20190815150032-19ec300ac7e1/go.mod h1:g+KX39tmYfdCsE0iMumBV52JXqRSOJ1R4fJQDWjeYGo=
+github.com/go-flutter-desktop/go-flutter v0.28.0 h1:d5jLG24Nxn2ULA+KJDFJRxwkEDUQgO24MhvL+ccLxR8=
+github.com/go-flutter-desktop/go-flutter v0.28.0/go.mod h1:g+KX39tmYfdCsE0iMumBV52JXqRSOJ1R4fJQDWjeYGo=
 github.com/go-gl/glfw v0.0.0-20190519095719-e6da0acd62b1 h1:noz9OnjV5PMOZWNOI+y1cS5rnxuJfpY6leIgQEEdBQw=
 github.com/go-gl/glfw v0.0.0-20190519095719-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=

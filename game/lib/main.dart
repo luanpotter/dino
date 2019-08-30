@@ -17,8 +17,8 @@ Future main() async {
 }
 
 class Dino extends AnimationComponent {
-  static const G = 300.0;
-  static const J = -250.0;
+  static const G = 600.0;
+  static const J = -400.0;
 
   static const S = 3.0;
   static const W = 15.0;
